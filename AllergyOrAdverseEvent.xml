@@ -1,0 +1,46 @@
+<AllergyOrAdverseEvent>
+        <Allergies>
+          <SourceOfInformation>C</SourceOfInformation>
+          <EffectiveDate>
+            <DateTime>2026-01-15T10:30:00</DateTime>
+          </EffectiveDate>
+          <ExpirationDate>
+            <Date>2027-01-15</Date>
+          </ExpirationDate>
+          <AdverseEvent>
+            <Text>Rash</Text>
+            <Code>418038007</Code>
+            <Extension name="severity" url="https://test.example.org/fhir/StructureDefinition/allergy-severity">
+              <String code="M" codeQualifier="L">Mild</String>
+            </Extension>
+          </AdverseEvent>
+          <DrugProductCoded>
+            <Code>7980</Code>
+            <Qualifier>GPK</Qualifier>
+            <Text>AMOX</Text>
+            <Extension name="RXNORM" url="urn:oid:2.16.840.1.113883.6.88">
+              <String code="C001" codeQualifier="99">723</String>
+            </Extension>
+          </DrugProductCoded>
+          <ReactionCoded>
+            <Text>R21</Text>
+            <Code>39579001</Code>
+            <Extension name="SNOMED" url="urn:oid:2.16.840.1.113883.6.96">
+              <DateTime>2026-01-15T10:30:00</DateTime>
+            </Extension>
+          </ReactionCoded>
+          <SeverityCoded>
+            <Text>Mild</Text>
+            <Code>255604002</Code>
+            <Extension name="SNOMED" url="urn:oid:2.16.840.1.113883.6.96">
+              <Range>
+                <Start>1</Start>
+                <End>3</End>
+              </Range>
+            </Extension>
+          </SeverityCoded>
+          <Extension name="AllergySeverityScale" url="https://example.test/ncpdp/extensions/allergy-severity">
+            <Integer>2</Integer>
+          </Extension>
+        </Allergies>
+      </AllergyOrAdverseEvent>

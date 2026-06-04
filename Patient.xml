@@ -1,0 +1,199 @@
+<Patient>
+        <HumanPatient>
+          <Names>
+            <LastName>Sample</LastName>
+            <FirstName>Alex</FirstName>
+            <MiddleName>B</MiddleName>
+            <Suffix>Jr</Suffix>
+            <Prefix>Pet</Prefix>
+            <Extension name="names-ext" url="urn:example:names">
+              <Integer>1</Integer>
+            </Extension>
+          </Names>
+          <GenderAndSex>
+            <AdministrativeGender>F</AdministrativeGender>
+            <SexAssignedAtBirth>F</SexAssignedAtBirth>
+            <ReproductivePotential>false</ReproductivePotential>
+            <Extension name="gender-ext" url="urn:example:gender">
+              <DateTime>2026-01-15T10:30:00</DateTime>
+            </Extension>
+          </GenderAndSex>
+          <DateOfBirth>
+            <Date>2021-05-10</Date>
+          </DateOfBirth>
+          <Address>
+            <AddressLine1>10 Test Ave</AddressLine1>
+            <AddressLine2>Unit 2</AddressLine2>
+            <City>Testville</City>
+            <StateProvince>CA</StateProvince>
+            <PostalCode>99999</PostalCode>
+            <CountryCode>US</CountryCode>
+            <Extension name="address-ext" url="urn:example:address">
+              <Boolean>true</Boolean>
+            </Extension>
+          </Address>
+          <CommunicationNumbers>
+            <PrimaryTelephone>
+              <Number>2025550101</Number>
+              <NumberExtension>101</NumberExtension>
+              <SupportsSMS>true</SupportsSMS>
+              <TelephoneCountryCode>1</TelephoneCountryCode>
+              <Extension name="primary-phone-ext" url="urn:example:primary-phone">
+                <Base64Data>VGVzdA==</Base64Data>
+              </Extension>
+            </PrimaryTelephone>
+            <Beeper>
+              <Number>2025550102</Number>
+              <NumberExtension>102</NumberExtension>
+              <SupportsSMS>false</SupportsSMS>
+              <TelephoneCountryCode>1</TelephoneCountryCode>
+              <Extension name="beeper-ext" url="urn:example:beeper">
+                <Date>2026-01-16</Date>
+              </Extension>
+            </Beeper>
+            <ElectronicMail>alex.pet@example.test</ElectronicMail>
+            <Fax>
+              <Number>2025550103</Number>
+              <NumberExtension>103</NumberExtension>
+              <SupportsSMS>false</SupportsSMS>
+              <TelephoneCountryCode>1</TelephoneCountryCode>
+              <Extension name="fax-ext" url="urn:example:fax">
+                <String code="F1" codeQualifier="FX">Fax note</String>
+              </Extension>
+            </Fax>
+            <HomeTelephone>
+              <Number>2025550104</Number>
+              <NumberExtension>104</NumberExtension>
+              <SupportsSMS>true</SupportsSMS>
+              <TelephoneCountryCode>1</TelephoneCountryCode>
+              <Extension name="home-phone-ext" url="urn:example:home-phone">
+                <Base64Data>VGVzdA==</Base64Data>
+              </Extension>
+            </HomeTelephone>
+            <WorkTelephone>
+              <Number>2025550105</Number>
+              <NumberExtension>105</NumberExtension>
+              <SupportsSMS>false</SupportsSMS>
+              <TelephoneCountryCode>1</TelephoneCountryCode>
+              <Extension name="work-phone-ext" url="urn:example:work-phone">
+                <DateTime>2026-01-15T11:00:00</DateTime>
+              </Extension>
+            </WorkTelephone>
+            <OtherTelephone>
+              <Number>2025550106</Number>
+              <NumberExtension>106</NumberExtension>
+              <SupportsSMS>true</SupportsSMS>
+              <TelephoneCountryCode>1</TelephoneCountryCode>
+              <Extension name="other-phone-ext" url="urn:example:other-phone">
+                <Base64Data>VGVzdA==</Base64Data>
+              </Extension>
+            </OtherTelephone>
+            <DirectAddress>alex.pet@direct.example.test</DirectAddress>
+            <Extension name="comm-ext" url="urn:example:communications">
+              <Base64Data>VGVzdA==</Base64Data>
+            </Extension>
+          </CommunicationNumbers>
+          <PregnancyIndicator>false</PregnancyIndicator>
+          <Species>
+            <Text>Dog</Text>
+            <Code>448771007</Code>
+            <Extension name="species-ext" url="urn:example:species">
+              <Base64Data>VGVzdA==</Base64Data>
+            </Extension>
+          </Species>
+          <AlternateContact>
+            <Names>
+              <Name>
+                <LastName>Sample</LastName>
+                <FirstName>Jordan</FirstName>
+                <MiddleName>Q</MiddleName>
+                <Suffix>Sr</Suffix>
+                <Prefix>Mx</Prefix>
+              </Name>
+              <FormerName>
+                <LastName>Former</LastName>
+                <FirstName>Jordan</FirstName>
+                <MiddleName>R</MiddleName>
+                <Suffix>Sr</Suffix>
+                <Prefix>Mx</Prefix>
+              </FormerName>
+              <PreferredName>
+                <LastName>Sample</LastName>
+                <FirstName>Jordy</FirstName>
+                <MiddleName>Q</MiddleName>
+                <Suffix>Sr</Suffix>
+                <Prefix>Mx</Prefix>
+              </PreferredName>
+              <Pronouns>
+                <Pronoun>they/them</Pronoun>
+                <LOINCVersion>2.76</LOINCVersion>
+                <Value>1</Value>
+              </Pronouns>
+              <Extension name="alt-names-ext" url="urn:example:alt-names">
+                <Time>10:30:00</Time>
+              </Extension>
+            </Names>
+            <Address>
+              <AddressLine1>20 Test Rd</AddressLine1>
+              <AddressLine2>Ste 3</AddressLine2>
+              <City>Testville</City>
+              <StateProvince>CA</StateProvince>
+              <PostalCode>99999</PostalCode>
+              <CountryCode>US</CountryCode>
+              <Extension name="alt-address-ext" url="urn:example:alt-address">
+                <Date>2026-01-17</Date>
+              </Extension>
+            </Address>
+            <CommunicationNumbers>
+              <PrimaryTelephone>
+                <Number>2025550111</Number>
+                <NumberExtension>111</NumberExtension>
+                <SupportsSMS>true</SupportsSMS>
+                <TelephoneCountryCode>1</TelephoneCountryCode>
+              </PrimaryTelephone>
+              <Beeper>
+                <Number>2025550112</Number>
+                <NumberExtension>112</NumberExtension>
+                <SupportsSMS>false</SupportsSMS>
+                <TelephoneCountryCode>1</TelephoneCountryCode>
+              </Beeper>
+              <ElectronicMail>jordan.sample@example.test</ElectronicMail>
+              <Fax>
+                <Number>2025550113</Number>
+                <NumberExtension>113</NumberExtension>
+                <SupportsSMS>false</SupportsSMS>
+                <TelephoneCountryCode>1</TelephoneCountryCode>
+              </Fax>
+              <HomeTelephone>
+                <Number>2025550114</Number>
+                <NumberExtension>114</NumberExtension>
+                <SupportsSMS>true</SupportsSMS>
+                <TelephoneCountryCode>1</TelephoneCountryCode>
+              </HomeTelephone>
+              <WorkTelephone>
+                <Number>2025550115</Number>
+                <NumberExtension>115</NumberExtension>
+                <SupportsSMS>false</SupportsSMS>
+                <TelephoneCountryCode>1</TelephoneCountryCode>
+              </WorkTelephone>
+              <OtherTelephone>
+                <Number>2025550116</Number>
+                <NumberExtension>116</NumberExtension>
+                <SupportsSMS>true</SupportsSMS>
+                <TelephoneCountryCode>1</TelephoneCountryCode>
+              </OtherTelephone>
+              <DirectAddress>jordan.sample@direct.example.test</DirectAddress>
+              <Extension name="alt-comm-ext" url="urn:example:alt-communications">
+                <Decimal>1.0</Decimal>
+              </Extension>
+            </CommunicationNumbers>
+            <AlternateContactRelationship>1</AlternateContactRelationship>
+            <Extension name="alt-contact-ext" url="urn:example:alt-contact">
+              <String code="OC" codeQualifier="REL">Owner contact</String>
+            </Extension>
+          </AlternateContact>
+          <Extension name="patient-ext" url="urn:example:patient">
+            <String code="NH" codeQualifier="PAT">Nonhuman patient sample</String>
+          </Extension>
+        </HumanPatient>
+      </Patient>
