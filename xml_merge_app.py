@@ -49,9 +49,9 @@ class XmlMergeApp:
 
         help_text = (
             "1) Select a base XML file and one or more sample XML files.\n"
-            "2) Optional: remove every <Extension> node and its children from the base XML.\n"
-            "3) For each sample file, replace matching top-level sections in the base XML.\n"
-            "   A section matches when the direct child tag under the root has the same name.\n"
+            "2) Optional: remove every <Extension> node and its children.\n"
+            "3) For each sample file, replace matching sections in the base XML.\n"
+            "   A section matches when the sample section tag has the same name.\n"
             "4) Save the merged result to a new XML file."
         )
         ttk.Label(main, text=help_text, justify="left").pack(anchor="w", pady=(0, 12))
@@ -163,35 +163,60 @@ class XmlMergeApp:
         for parent in list(root.iter()):
             children = list(parent)
             for child in children:
-                if local_name(child.tag) == "Extension":
+                if local_name(child.tag).lower() == "extension":
                     parent.remove(child)
                     removed_count += 1
         return removed_count
 
-    def find_direct_child_by_tag(self, parent, target_tag_name):
-        for child in list(parent):
-            if local_name(child.tag) == target_tag_name:
-                return child
-        return None
+    def find_element_parent_by_tag(self, root, target_tag_name):
+        for parent in root.iter():
+            for child in list(parent):
+                if local_name(child.tag) == target_tag_name:
+                    return parent, child
+        return None, None
+
+    def get_sample_sections(self, base_root, sample_root):
+        sample_tag_name = local_name(sample_root.tag)
+        base_tag_name = local_name(base_root.tag)
+
+        if sample_tag_name != base_tag_name:
+            _, existing = self.find_element_parent_by_tag(base_root, sample_tag_name)
+            if existing is not None:
+                return [sample_root]
+
+            matching_children = [
+                child
+                for child in list(sample_root)
+                if isinstance(child.tag, str)
+                and self.find_element_parent_by_tag(base_root, local_name(child.tag))[1] is not None
+            ]
+            if matching_children:
+                return matching_children
+
+            return [sample_root]
+
+        return [child for child in list(sample_root) if isinstance(child.tag, str)]
 
     def merge_sections(self, base_root, sample_root, sample_name):
         replaced = 0
         appended = 0
         skipped = 0
 
-        sample_children = [child for child in list(sample_root) if isinstance(child.tag, str)]
-        if not sample_children:
-            self.log(f"- {sample_name}: no direct child sections found under root; skipped.")
+        sample_sections = self.get_sample_sections(base_root, sample_root)
+        if not sample_sections:
+            self.log(f"- {sample_name}: no sections found; skipped.")
             return replaced, appended, skipped
 
-        for sample_child in sample_children:
-            tag_name = local_name(sample_child.tag)
-            existing = self.find_direct_child_by_tag(base_root, tag_name)
-            incoming = copy.deepcopy(sample_child)
+        for sample_section in sample_sections:
+            tag_name = local_name(sample_section.tag)
+            parent, existing = self.find_element_parent_by_tag(base_root, tag_name)
+            incoming = copy.deepcopy(sample_section)
             if existing is not None:
-                index = list(base_root).index(existing)
-                base_root.remove(existing)
-                base_root.insert(index, incoming)
+                incoming.tail = existing.tail
+                siblings = list(parent)
+                index = siblings.index(existing)
+                parent.remove(existing)
+                parent.insert(index, incoming)
                 replaced += 1
                 self.log(f"  Replaced section: {tag_name}")
             else:
@@ -219,7 +244,7 @@ class XmlMergeApp:
 
         if self.remove_extension.get():
             removed_count = self.remove_extension_nodes(base_root)
-            self.log(f"Removed Extension nodes: {removed_count}")
+            self.log(f"Removed Extension nodes from base: {removed_count}")
         else:
             self.log("Extension node removal: skipped")
 
@@ -234,6 +259,10 @@ class XmlMergeApp:
             except Exception as ex:
                 self.log(f"  ERROR: Could not read sample XML: {ex}")
                 continue
+
+            if self.remove_extension.get():
+                removed_count = self.remove_extension_nodes(sample_root)
+                self.log(f"  Removed Extension nodes from sample: {removed_count}")
 
             replaced, appended, _ = self.merge_sections(base_root, sample_root, os.path.basename(sample_path))
             total_replaced += replaced
