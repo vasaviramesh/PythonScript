@@ -175,6 +175,49 @@ class XmlMergeApp:
                     return parent, child
         return None, None
 
+    def _find_parent_child_by_path(self, root, tag_path):
+        """
+        Find parent/child in base tree using an exact local-name path.
+        tag_path is a list like ["Message","Body","NewRx","MedicationPrescribed"].
+        Returns (parent, child) for the final node, or (None, None).
+        """
+        if not tag_path or local_name(root.tag) != tag_path[0]:
+            return None, None
+
+        current = root
+        for name in tag_path[1:-1]:
+            nxt = None
+            for ch in list(current):
+                if isinstance(ch.tag, str) and local_name(ch.tag) == name:
+                    nxt = ch
+                    break
+            if nxt is None:
+                return None, None
+            current = nxt
+
+        target_name = tag_path[-1]
+        for ch in list(current):
+            if isinstance(ch.tag, str) and local_name(ch.tag) == target_name:
+                return current, ch
+        return None, None
+
+    def _path_from_root_to_node(self, root, target):
+        """Return local-name path list from root to target node, else None."""
+        target_id = id(target)
+        path = []
+
+        def dfs(node):
+            path.append(local_name(node.tag))
+            if id(node) == target_id:
+                return True
+            for ch in list(node):
+                if isinstance(ch.tag, str) and dfs(ch):
+                    return True
+            path.pop()
+            return False
+
+        return path[:] if dfs(root) else None
+
     def get_sample_sections(self, base_root, sample_root):
         sample_tag_name = local_name(sample_root.tag)
         base_tag_name = local_name(base_root.tag)
@@ -209,7 +252,16 @@ class XmlMergeApp:
 
         for sample_section in sample_sections:
             tag_name = local_name(sample_section.tag)
-            parent, existing = self.find_element_parent_by_tag(base_root, tag_name)
+            # Prefer exact path match (reliable when tags repeat in many places)
+            section_path = self._path_from_root_to_node(sample_root, sample_section)
+            parent, existing = (None, None)
+            if section_path:
+                parent, existing = self._find_parent_child_by_path(base_root, section_path)
+
+            # Fallback to old behavior
+            if existing is None:
+                parent, existing = self.find_element_parent_by_tag(base_root, tag_name)
+
             incoming = copy.deepcopy(sample_section)
             if existing is not None:
                 incoming.tail = existing.tail
@@ -218,7 +270,10 @@ class XmlMergeApp:
                 parent.remove(existing)
                 parent.insert(index, incoming)
                 replaced += 1
-                self.log(f"  Replaced section: {tag_name}")
+                if section_path:
+                    self.log(f"  Replaced section: {'/'.join(section_path)}")
+                else:
+                    self.log(f"  Replaced section: {tag_name}")
             else:
                 base_root.append(incoming)
                 appended += 1
