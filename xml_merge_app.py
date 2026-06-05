@@ -195,19 +195,19 @@ class XmlMergeApp:
 
     def merge_whole_node(self, base_root, sample_root, sample_name):
         """
-        Whole-node replacement: find the node in base_root whose local tag name
-        matches sample_root's local tag name, and replace it entirely with a deep
-        copy of sample_root. If base_root itself matches, replace its content
-        in-place. If no match is found, append sample_root to base_root.
+        Replace the first node in the template whose local-name matches the
+        sample root's local-name, walking the template tree from its root
+        (first XPath/local-name path match).  The entire matched node is
+        replaced with a deep copy of sample_root without inspecting child
+        content.  Falls back to appending when no path match is found.
         Returns (replaced_count, appended_count).
         """
-        sample_tag = local_name(sample_root.tag)
-        base_tag = local_name(base_root.tag)
         incoming = copy.deepcopy(sample_root)
+        sample_tag = local_name(sample_root.tag)
 
-        if sample_tag == base_tag:
-            # Replace base root content in-place (ElementTree root object cannot
-            # be swapped, so update its attributes and children directly).
+        # If sample root tag matches base root tag, replace base root content
+        # in-place (ElementTree root object cannot be swapped directly).
+        if local_name(base_root.tag) == sample_tag:
             base_root.attrib.clear()
             base_root.attrib.update(incoming.attrib)
             base_root.text = incoming.text
@@ -215,23 +215,31 @@ class XmlMergeApp:
             self.log(f"  Replaced base root content: {sample_tag}")
             return 1, 0
 
-        parent, existing = self.find_element_parent_by_tag(base_root, sample_tag)
+        # Walk the base tree from root; return (parent, target) for the first
+        # node whose local name equals tag_name.  No child content is examined —
+        # the match is purely by local tag name (first XPath path match).
+        def find_parent_and_target_by_path(root, tag_name):
+            for parent in root.iter():
+                for child in list(parent):
+                    if isinstance(child.tag, str) and local_name(child.tag) == tag_name:
+                        return parent, child
+            return None, None
 
-        if existing is not None:
-            path = self._path_from_root_to_node(base_root, existing)
-            incoming.tail = existing.tail
+        parent, target = find_parent_and_target_by_path(base_root, sample_tag)
+
+        if target is not None and parent is not None:
+            path = self._path_from_root_to_node(base_root, target)
+            incoming.tail = target.tail
             siblings = list(parent)
-            index = siblings.index(existing)
-            parent.remove(existing)
-            parent.insert(index, incoming)
-            if path:
-                self.log(f"  Replaced by path: {'/'.join(path)}")
-            else:
-                self.log(f"  Replaced node: {sample_tag}")
+            idx = siblings.index(target)
+            parent.remove(target)
+            parent.insert(idx, incoming)
+            self.log(f"  Replaced by exact path: {'/'.join(path) if path else sample_tag}")
             return 1, 0
 
+        # Fallback: no path match found in base; append sample root.
         base_root.append(incoming)
-        self.log(f"  Appended to base root (no match found for '{sample_tag}')")
+        self.log(f"  Exact path not found; appended sample root: {sample_tag}")
         return 0, 1
 
     def run_merge(self, save=False):
