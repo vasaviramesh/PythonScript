@@ -211,10 +211,7 @@ class XmlMergeApp:
             base_root.attrib.clear()
             base_root.attrib.update(incoming.attrib)
             base_root.text = incoming.text
-            for child in list(base_root):
-                base_root.remove(child)
-            for child in list(incoming):
-                base_root.append(child)
+            base_root[:] = list(incoming)
             self.log(f"  Replaced base root content: {sample_tag}")
             return 1, 0
 
@@ -234,7 +231,7 @@ class XmlMergeApp:
             return 1, 0
 
         base_root.append(incoming)
-        self.log(f"  Appended (no match found for '{sample_tag}'): appended to base root")
+        self.log(f"  Appended to base root (no match found for '{sample_tag}')")
         return 0, 1
 
     def run_merge(self, save=False):
