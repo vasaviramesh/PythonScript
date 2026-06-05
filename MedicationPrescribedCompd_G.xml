@@ -1,0 +1,1157 @@
+<MedicationPrescribed>
+	<DrugDescription>Tobramycin 0.3% / Dexamethasone 0.1% ophthalmic suspension compounded sterile eye drops</DrugDescription>
+	<Product>
+		<CompoundInformation>
+			<FinalCompoundPharmaceuticalDosageForm>C91164</FinalCompoundPharmaceuticalDosageForm>
+
+			<CompoundIngredients>
+				<CompoundIngredient>
+					<CompoundIngredientItemDescription>Tobramycin sulfate USP micronized powder, sterile grade</CompoundIngredientItemDescription>
+					<ItemNumber>
+						<NDC>07813000101</NDC>
+						<ProductCode>
+							<Code>309683</Code>
+							<Qualifier>BPK</Qualifier>
+						</ProductCode>
+					</ItemNumber>
+					<Strength>
+						<StrengthValue>0.3</StrengthValue>
+						<StrengthForm>
+							<Code>C28254</Code>
+						</StrengthForm>
+						<StrengthUnitOfMeasure>
+							<Code>C25613</Code>
+						</StrengthUnitOfMeasure>
+					</Strength>
+					<DEASchedule>
+						<Code>0</Code>
+					</DEASchedule>
+					<LotNumber>
+						<LotNumber>TOB-24K11-STER-00921</LotNumber>
+						<LotExpiration>
+							<Date>2027-01-31</Date>
+						</LotExpiration>
+					</LotNumber>
+				</CompoundIngredient>
+
+				<Quantity>
+					<Value>3.0</Value>
+					<CodeListQualifier>40</CodeListQualifier>
+					<QuantityUnitOfMeasure>
+						<Code>mL</Code>
+					</QuantityUnitOfMeasure>
+				</Quantity>
+
+				<DrugUseEvaluation>
+					<ServiceReasonCode>DR</ServiceReasonCode>
+					<ProfessionalServiceCode>ZZ</ProfessionalServiceCode>
+					<ServiceResultCode>1G</ServiceResultCode>
+					<CoAgent>
+						<CoAgentCode>
+							<Code>TOB-BASE-CHECK</Code>
+							<Qualifier>39</Qualifier>
+							<Description>Ingredient concentration verified against formula worksheet</Description>
+						</CoAgentCode>
+					</CoAgent>
+					<ClinicalSignificanceCode>1</ClinicalSignificanceCode>
+					<AcknowledgementReason>Compound concentration double-check completed by verifier pharmacist</AcknowledgementReason>
+				</DrugUseEvaluation>
+
+				<DrugUseEvaluation>
+					<ServiceReasonCode>ER</ServiceReasonCode>
+					<ProfessionalServiceCode>M0</ProfessionalServiceCode>
+					<ServiceResultCode>1B</ServiceResultCode>
+					<CoAgent>
+						<CoAgentCode>
+							<Code>STERILITY-PROC-01</Code>
+							<Qualifier>39</Qualifier>
+							<Description>Sterile preparation workflow validated</Description>
+						</CoAgentCode>
+					</CoAgent>
+					<ClinicalSignificanceCode>2</ClinicalSignificanceCode>
+					<AcknowledgementReason>Aseptic process and hood cleaning log confirmed prior to compounding</AcknowledgementReason>
+				</DrugUseEvaluation>
+			</CompoundIngredients>
+
+			<CompoundIngredients>
+				<CompoundIngredient>
+					<CompoundIngredientItemDescription>Dexamethasone sodium phosphate USP sterile concentrate</CompoundIngredientItemDescription>
+					<ItemNumber>
+						<NDC>63323051610</NDC>
+						<ProductCode>
+							<Code>197577</Code>
+							<Qualifier>GPK</Qualifier>
+						</ProductCode>
+					</ItemNumber>
+					<Strength>
+						<StrengthValue>0.1</StrengthValue>
+						<StrengthForm>
+							<Code>C28254</Code>
+						</StrengthForm>
+						<StrengthUnitOfMeasure>
+							<Code>C28253</Code>
+						</StrengthUnitOfMeasure>
+					</Strength>
+					<DEASchedule>
+						<Code>0</Code>
+					</DEASchedule>
+					<LotNumber>
+						<LotNumber>DEX-25A03-STER-11452</LotNumber>
+						<LotExpiration>
+							<Date>2026-12-15</Date>
+						</LotExpiration>
+					</LotNumber>
+				</CompoundIngredient>
+
+				<Quantity>
+					<Value>1.0</Value>
+					<CodeListQualifier>40</CodeListQualifier>
+					<QuantityUnitOfMeasure>
+						<Code>mL</Code>
+					</QuantityUnitOfMeasure>
+				</Quantity>
+
+				<DrugUseEvaluation>
+					<ServiceReasonCode>DR</ServiceReasonCode>
+					<ProfessionalServiceCode>ZZ</ProfessionalServiceCode>
+					<ServiceResultCode>1A</ServiceResultCode>
+					<CoAgent>
+						<CoAgentCode>
+							<Code>DEX-VERIFY-02</Code>
+							<Qualifier>39</Qualifier>
+							<Description>Steroid potency and vial integrity inspection</Description>
+						</CoAgentCode>
+					</CoAgent>
+					<ClinicalSignificanceCode>1</ClinicalSignificanceCode>
+					<AcknowledgementReason>Vial seal intact and concentration matched compounding record</AcknowledgementReason>
+				</DrugUseEvaluation>
+
+				<DrugUseEvaluation>
+					<ServiceReasonCode>PE</ServiceReasonCode>
+					<ProfessionalServiceCode>CC</ProfessionalServiceCode>
+					<ServiceResultCode>1C</ServiceResultCode>
+					<CoAgent>
+						<CoAgentCode>
+							<Code>PHSTAB-REV-03</Code>
+							<Qualifier>39</Qualifier>
+							<Description>Physical compatibility review completed</Description>
+						</CoAgentCode>
+					</CoAgent>
+					<ClinicalSignificanceCode>2</ClinicalSignificanceCode>
+					<AcknowledgementReason>No precipitate observed after final admixture and inversion</AcknowledgementReason>
+				</DrugUseEvaluation>
+			</CompoundIngredients>
+
+			<CompoundIngredients>
+				<CompoundIngredient>
+					<CompoundIngredientItemDescription>Preservative-free sterile ophthalmic vehicle (balanced isotonic solution)</CompoundIngredientItemDescription>
+					<ItemNumber>
+						<NDC>17478001012</NDC>
+						<ProductCode>
+							<Code>VEH88231</Code>
+							<Qualifier>DI</Qualifier>
+						</ProductCode>
+					</ItemNumber>
+					<Strength>
+						<StrengthValue>qs</StrengthValue>
+						<StrengthForm>
+							<Code>C91164</Code>
+						</StrengthForm>
+						<StrengthUnitOfMeasure>
+							<Code>C28254</Code>
+						</StrengthUnitOfMeasure>
+					</Strength>
+					<DEASchedule>
+						<Code>0</Code>
+					</DEASchedule>
+					<LotNumber>
+						<LotNumber>VEH-24L22-PF-33091</LotNumber>
+						<LotExpiration>
+							<Date>2026-11-30</Date>
+						</LotExpiration>
+					</LotNumber>
+				</CompoundIngredient>
+
+				<Quantity>
+					<Value>6.0</Value>
+					<CodeListQualifier>40</CodeListQualifier>
+					<QuantityUnitOfMeasure>
+						<Code>mL</Code>
+					</QuantityUnitOfMeasure>
+				</Quantity>
+
+				<DrugUseEvaluation>
+					<ServiceReasonCode>AN</ServiceReasonCode>
+					<ProfessionalServiceCode>AS</ProfessionalServiceCode>
+					<ServiceResultCode>1D</ServiceResultCode>
+					<CoAgent>
+						<CoAgentCode>
+							<Code>VEHICLE-LOT-QA</Code>
+							<Qualifier>39</Qualifier>
+							<Description>Vehicle lot release and sterility cert confirmed</Description>
+						</CoAgentCode>
+					</CoAgent>
+					<ClinicalSignificanceCode>1</ClinicalSignificanceCode>
+					<AcknowledgementReason>Vehicle lot documented in compounding log and BUD worksheet</AcknowledgementReason>
+				</DrugUseEvaluation>
+
+				<DrugUseEvaluation>
+					<ServiceReasonCode>ER</ServiceReasonCode>
+					<ProfessionalServiceCode>M0</ProfessionalServiceCode>
+					<ServiceResultCode>1G</ServiceResultCode>
+					<CoAgent>
+						<CoAgentCode>
+							<Code>FINAL-PH-CHECK</Code>
+							<Qualifier>39</Qualifier>
+							<Description>Final pH and clarity check prior to dispense</Description>
+						</CoAgentCode>
+					</CoAgent>
+					<ClinicalSignificanceCode>2</ClinicalSignificanceCode>
+					<AcknowledgementReason>Final solution clear and within expected pH tolerance for ophthalmic use</AcknowledgementReason>
+				</DrugUseEvaluation>
+			</CompoundIngredients>
+		</CompoundInformation>
+	</Product>
+
+	<Quantity>
+		<Value>10</Value>
+		<CodeListQualifier>38</CodeListQualifier>
+		<QuantityUnitOfMeasure>
+			<Code>C28254</Code>
+		</QuantityUnitOfMeasure>
+	</Quantity>
+	<DaysSupply>7</DaysSupply>
+	<WrittenDate>
+		<Date>2026-06-04</Date>
+	</WrittenDate>
+	<LastFillDate>
+		<Date>2026-05-10</Date>
+	</LastFillDate>
+	<Substitutions>
+		<Substitutions>0</Substitutions>
+		<TherapeuticSubstitutionIndicator>0</TherapeuticSubstitutionIndicator>
+	</Substitutions>
+		<NumberOfRefills>1</NumberOfRefills>
+	
+		<Diagnosis>
+			<ClinicalInformationQualifier>1</ClinicalInformationQualifier>
+			<Qualifier>ABF</Qualifier>
+			<Value>H10402</Value>
+			<Description>Unspecified acute conjunctivitis, left eye</Description>
+			<EffectiveDate>
+				<Date>2026-05-29</Date>
+			</EffectiveDate>
+			<ExpirationDate>
+				<Date>2026-07-15</Date>
+			</ExpirationDate>
+			<DateOfLastOfficeVisit>
+				<Date>2026-06-03</Date>
+			</DateOfLastOfficeVisit>
+		</Diagnosis>
+		<Diagnosis>
+			<ClinicalInformationQualifier>1</ClinicalInformationQualifier>
+			<Qualifier>ABF</Qualifier>
+			<Value>H1012</Value>
+			<Description>Acute atopic conjunctivitis, left eye</Description>
+			<EffectiveDate>
+				<Date>2026-05-30</Date>
+			</EffectiveDate>
+			<ExpirationDate>
+				<Date>2026-08-01</Date>
+			</ExpirationDate>
+			<DateOfLastOfficeVisit>
+				<Date>2026-06-03</Date>
+			</DateOfLastOfficeVisit>
+		</Diagnosis>
+		<Diagnosis>
+			<ClinicalInformationQualifier>1</ClinicalInformationQualifier>
+			<Qualifier>ABF</Qualifier>
+			<Value>H5712</Value>
+			<Description>Ocular pain, left eye</Description>
+			<EffectiveDate>
+				<Date>2026-06-01</Date>
+			</EffectiveDate>
+			<ExpirationDate>
+				<Date>2026-06-30</Date>
+			</ExpirationDate>
+			<DateOfLastOfficeVisit>
+				<Date>2026-06-03</Date>
+			</DateOfLastOfficeVisit>
+		</Diagnosis>
+	
+		<PriorAuthorizationNumber>PA-OPH-2026-441782</PriorAuthorizationNumber>
+		<Note>Compound requested due to intolerance to preservative-containing commercial product; use sterile dropper and discard after 14 days.</Note>
+	
+		<DrugUseEvaluation>
+			<ServiceReasonCode>PC</ServiceReasonCode>
+			<ProfessionalServiceCode>00</ProfessionalServiceCode>
+			<ServiceResultCode>00</ServiceResultCode>
+			<CoAgent>
+				<CoAgentCode>
+					<Code>DX-OPH-CHK01</Code>
+					<Qualifier>01</Qualifier>
+					<Description>Diagnosis and indication confirmed with encounter assessment</Description>
+				</CoAgentCode>
+			</CoAgent>
+			<ClinicalSignificanceCode>1</ClinicalSignificanceCode>
+			<AcknowledgementReason>Prescriber reviewed diagnosis appropriateness for topical ophthalmic antibiotic-steroid therapy.</AcknowledgementReason>
+		</DrugUseEvaluation>
+		<DrugUseEvaluation>
+			<ServiceReasonCode>PP</ServiceReasonCode>
+			<ProfessionalServiceCode>AS</ProfessionalServiceCode>
+			<ServiceResultCode>1A</ServiceResultCode>
+			<CoAgent>
+				<CoAgentCode>
+					<Code>ALL-CROSSCHK02</Code>
+					<Qualifier>02</Qualifier>
+					<Description>Patient allergy profile evaluated for aminoglycoside sensitivity</Description>
+				</CoAgentCode>
+			</CoAgent>
+			<ClinicalSignificanceCode>2</ClinicalSignificanceCode>
+			<AcknowledgementReason>No documented allergy conflict with tobramycin or dexamethasone ingredients.</AcknowledgementReason>
+		</DrugUseEvaluation>
+		<DrugUseEvaluation>
+			<ServiceReasonCode>EX</ServiceReasonCode>
+			<ProfessionalServiceCode>CC</ProfessionalServiceCode>
+			<ServiceResultCode>1B</ServiceResultCode>
+			<CoAgent>
+				<CoAgentCode>
+					<Code>THER-DUR-03</Code>
+					<Qualifier>03</Qualifier>
+					<Description>Therapy duration aligns with acute ocular inflammation protocol</Description>
+				</CoAgentCode>
+			</CoAgent>
+			<ClinicalSignificanceCode>3</ClinicalSignificanceCode>
+			<AcknowledgementReason>7-day treatment course selected to minimize prolonged steroid exposure.</AcknowledgementReason>
+		</DrugUseEvaluation>
+	
+		<PriorAuthorizationStatus>A</PriorAuthorizationStatus>
+	
+		<Sig>
+			<SigText>Instill 1 drop in left eye every 6 hours for 7 days; shake well before each use.</SigText>
+			<CodeSystem>
+				<SNOMEDVersion>20250101</SNOMEDVersion>
+				<FMTVersion>23.04d</FMTVersion>
+			</CodeSystem>
+	
+			<Instruction>
+				<InstructionIndicator>MEDICALENCOUNTER</InstructionIndicator>
+				<MultipleTimingModifier>AND</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>6</Value1>
+							<RangeModifier>AND</RangeModifier>
+							<Value2>6</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Hour</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>258702006</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Every</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>307469008</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>During waking hours</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>307145004</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Space doses approximately 6 hours apart while awake.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Continue at this frequency for the first 7 days unless directed otherwise.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+	
+				<MultipleTimingModifier>OR</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>4</Value1>
+							<RangeModifier>OR</RangeModifier>
+							<Value2>6</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Hour</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>258702006</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>As clinically indicated</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>410942007</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>If redness worsens</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>271807003</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Temporary increase to every 4 hours may be used if inflammation acutely worsens.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Use higher frequency only under provider instruction.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+	
+				<MultipleTimingModifier>TO</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>7</Value1>
+							<RangeModifier>TO</RangeModifier>
+							<Value2>10</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Day</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>258703001</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Total treatment duration</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>410668003</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>Until follow-up review</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>308335008</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Treatment duration may extend to 10 days if clinician determines persistent inflammation.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Do not exceed 10 days without ophthalmology reassessment.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+			</Instruction>
+	
+			<MultipleInstructionModifier>AND</MultipleInstructionModifier>
+			<Instruction>
+				<InstructionIndicator>MEDICALENCOUNTER</InstructionIndicator>
+				<MultipleTimingModifier>AND</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>1</Value1>
+							<RangeModifier>AND</RangeModifier>
+							<Value2>1</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Drop</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>415818008</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Instill</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>419652001</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>Left eye</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>8966001</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Do not touch dropper tip to eye, eyelid, or fingers.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Perform hand hygiene before and after administration.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+	
+				<MultipleTimingModifier>OR</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>1</Value1>
+							<RangeModifier>OR</RangeModifier>
+							<Value2>2</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Drop</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>415818008</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Per dose</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>255214001</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>If severe discharge present</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>246679005</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Second drop may be used only when discharge is significant and temporary escalation is authorized.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Return to single-drop dosing when symptoms improve.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+	
+				<MultipleTimingModifier>TO</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>5</Value1>
+							<RangeModifier>TO</RangeModifier>
+							<Value2>10</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Minute</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>258701004</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Separate from other ophthalmic products</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>410668003</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>Between eye medications</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>182840001</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Maintain 5 to 10 minute interval before applying other eye drops/ointments.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Prevents washout and improves ocular absorption.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+			</Instruction>
+	
+			<MultipleInstructionModifier>OR</MultipleInstructionModifier>
+			<Instruction>
+				<InstructionIndicator>MEDICALENCOUNTER</InstructionIndicator>
+				<MultipleTimingModifier>AND</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>1</Value1>
+							<RangeModifier>AND</RangeModifier>
+							<Value2>1</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Bottle</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>706681000</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Shake before use</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>422032002</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>Immediately prior to each administration</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>307145004</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Invert and shake bottle gently for 10 seconds before each dose.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Suspension must be mixed to ensure consistent delivered concentration.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+	
+				<MultipleTimingModifier>OR</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>14</Value1>
+							<RangeModifier>OR</RangeModifier>
+							<Value2>14</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Day</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>258703001</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Discard after opening</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>410668003</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>Post first use</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>255214001</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Mark opening date on label; discard remaining product after 14 days.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Short beyond-use period applied for sterile compounded ophthalmic preparation.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+	
+				<MultipleTimingModifier>TO</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>2</Value1>
+							<RangeModifier>TO</RangeModifier>
+							<Value2>8</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Degree Celsius</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>258773002</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Storage temperature</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>410668003</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>When not in use</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>307145004</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Store refrigerated between 2°C and 8°C; protect from contamination.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Do not freeze; allow brief warming to room temperature before instillation.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+			</Instruction>
+	
+			<MultipleInstructionModifier>THEN</MultipleInstructionModifier>
+			<Instruction>
+				<InstructionIndicator>MEDICALENCOUNTER</InstructionIndicator>
+				<MultipleTimingModifier>AND</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>48</Value1>
+							<RangeModifier>AND</RangeModifier>
+							<Value2>72</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Hour</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>258702006</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Reassess response</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>410942007</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>If no clinical improvement</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>281647001</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Contact clinic if pain, photophobia, or discharge does not improve within 48–72 hours.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Urgent reevaluation recommended for worsening symptoms.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+	
+				<MultipleTimingModifier>OR</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>1</Value1>
+							<RangeModifier>OR</RangeModifier>
+							<Value2>1</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Episode</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>255214001</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Stop and seek immediate care</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>410942007</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>If hypersensitivity reaction occurs</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>271807003</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Discontinue immediately with eyelid swelling, rash, or breathing symptoms.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Adverse reaction plan reviewed with patient before dispensing.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+	
+				<MultipleTimingModifier>TO</MultipleTimingModifier>
+				<TimingAndDuration>
+					<AdministrationTiming>
+						<AdministrationTimingValue>
+							<Value1>7</Value1>
+							<RangeModifier>TO</RangeModifier>
+							<Value2>14</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Day</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>258703001</Code>
+							</ValueUnitOfMeasure>
+						</AdministrationTimingValue>
+						<AdministrationTimingModifier>
+							<Text>Follow-up window</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>410668003</Code>
+						</AdministrationTimingModifier>
+						<AdministrationTimingEvent>
+							<Text>After treatment completion</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>399166001</Code>
+						</AdministrationTimingEvent>
+						<AdministrationTimingClarifyingFreeText>Schedule ophthalmology follow-up between day 7 and day 14 if symptoms recur.</AdministrationTimingClarifyingFreeText>
+					</AdministrationTiming>
+					<TimingClarifyingFreeText>Ensures post-treatment assessment for recurrent inflammation.</TimingClarifyingFreeText>
+				</TimingAndDuration>
+			</Instruction>
+	
+			<IndicationForUse>
+				<IndicationPrecursor>
+					<Text>For treatment of</Text>
+					<Qualifier>SNOMED</Qualifier>
+					<Code>410942007</Code>
+				</IndicationPrecursor>
+				<Indication>
+					<Text>Bacterial conjunctivitis</Text>
+					<Qualifier>SNOMED</Qualifier>
+					<Code>128350005</Code>
+				</Indication>
+				<IndicationRelation>EQ</IndicationRelation>
+				<IndicationValue>
+					<Value1>1</Value1>
+					<RangeModifier>AND</RangeModifier>
+					<Value2>1</Value2>
+					<ValueUnitOfMeasure>
+						<Text>Condition</Text>
+						<Qualifier>SNOMED</Qualifier>
+						<Code>246112005</Code>
+					</ValueUnitOfMeasure>
+				</IndicationValue>
+			</IndicationForUse>
+	
+			<IndicationForUse>
+				<IndicationPrecursor>
+					<Text>When inflammation score</Text>
+					<Qualifier>SNOMED</Qualifier>
+					<Code>410668003</Code>
+				</IndicationPrecursor>
+				<Indication>
+					<Text>Conjunctival hyperemia severity</Text>
+					<Qualifier>SNOMED</Qualifier>
+					<Code>246679005</Code>
+				</Indication>
+				<IndicationRelation>GT</IndicationRelation>
+				<IndicationValue>
+					<Value1>2</Value1>
+					<RangeModifier>OR</RangeModifier>
+					<Value2>3</Value2>
+					<ValueUnitOfMeasure>
+						<Text>Severity grade</Text>
+						<Qualifier>SNOMED</Qualifier>
+						<Code>272141005</Code>
+					</ValueUnitOfMeasure>
+				</IndicationValue>
+			</IndicationForUse>
+	
+			<IndicationForUse>
+				<IndicationPrecursor>
+					<Text>Use with caution if</Text>
+					<Qualifier>SNOMED</Qualifier>
+					<Code>410942007</Code>
+				</IndicationPrecursor>
+				<Indication>
+					<Text>Intraocular pressure elevated</Text>
+					<Qualifier>SNOMED</Qualifier>
+					<Code>16544005</Code>
+				</Indication>
+				<IndicationRelation>LT</IndicationRelation>
+				<IndicationValue>
+					<Value1>21</Value1>
+					<RangeModifier>TO</RangeModifier>
+					<Value2>25</Value2>
+					<ValueUnitOfMeasure>
+						<Text>mmHg</Text>
+						<Qualifier>SNOMED</Qualifier>
+						<Code>258796008</Code>
+					</ValueUnitOfMeasure>
+				</IndicationValue>
+			</IndicationForUse>
+	
+			<MaximumDoseRestriction>
+				<MaximumDoseRestrictionNumericValue>4</MaximumDoseRestrictionNumericValue>
+				<MaximumDoseRestrictionForm>
+					<Text>Drops per eye per day</Text>
+					<Qualifier>DoseUnitOfMeasure</Qualifier>
+					<Code>DROPDAY01</Code>
+				</MaximumDoseRestrictionForm>
+				<MaximumDoseRestrictionDurationValue>24</MaximumDoseRestrictionDurationValue>
+				<MaximumDoseRestrictionDurationUnit>
+					<Text>Hour</Text>
+					<Qualifier>SNOMED</Qualifier>
+					<Code>258702006</Code>
+				</MaximumDoseRestrictionDurationUnit>
+				<MaximumDoseRestrictionClarifyingFreeText>Do not exceed 4 single-drop administrations in the affected eye within 24 hours.</MaximumDoseRestrictionClarifyingFreeText>
+			</MaximumDoseRestriction>
+	
+			<MaximumDoseRestriction>
+				<MaximumDoseRestrictionNumericValue>2</MaximumDoseRestrictionNumericValue>
+				<MaximumDoseRestrictionForm>
+					<Text>Drops per administration</Text>
+					<Qualifier>DoseUnitOfMeasure</Qualifier>
+					<Code>DROPDOSE02</Code>
+				</MaximumDoseRestrictionForm>
+				<MaximumDoseRestrictionDurationValue>1</MaximumDoseRestrictionDurationValue>
+				<MaximumDoseRestrictionDurationUnit>
+					<Text>Dose event</Text>
+					<Qualifier>SNOMED</Qualifier>
+					<Code>255214001</Code>
+				</MaximumDoseRestrictionDurationUnit>
+				<MaximumDoseRestrictionClarifyingFreeText>Maximum of 2 drops in one administration only when prescriber-directed escalation criteria are met.</MaximumDoseRestrictionClarifyingFreeText>
+			</MaximumDoseRestriction>
+	
+			<MaximumDoseRestriction>
+				<MaximumDoseRestrictionNumericValue>10</MaximumDoseRestrictionNumericValue>
+				<MaximumDoseRestrictionForm>
+					<Text>Total treatment duration</Text>
+					<Qualifier>DoseUnitOfMeasure</Qualifier>
+					<Code>DURDAY03</Code>
+				</MaximumDoseRestrictionForm>
+				<MaximumDoseRestrictionDurationValue>1</MaximumDoseRestrictionDurationValue>
+				<MaximumDoseRestrictionDurationUnit>
+					<Text>Course</Text>
+					<Qualifier>SNOMED</Qualifier>
+					<Code>399166001</Code>
+				</MaximumDoseRestrictionDurationUnit>
+				<MaximumDoseRestrictionClarifyingFreeText>Do not continue ophthalmic steroid-containing therapy beyond 10 days without reevaluation.</MaximumDoseRestrictionClarifyingFreeText>
+			</MaximumDoseRestriction>
+	
+			<ClarifyingFreeText>Use only in left eye, remove contact lenses before use, and wait at least 15 minutes before reinsertion.</ClarifyingFreeText>
+	</Sig>
+		<DoNotFill>E</DoNotFill>
+		<OrderCaptureMethod>EP</OrderCaptureMethod>
+		<ReasonForSubstitutionCodeUsed>BRAND MEDICALLY NECESSARY</ReasonForSubstitutionCodeUsed>
+		<SplitScript>B</SplitScript>
+	
+		<RxFillIndicator>All</RxFillIndicator>
+		<RxFillIndicator>Dispensed</RxFillIndicator>
+		<RxFillIndicator>EventNotification</RxFillIndicator>
+	
+		<OfficeOfPharmacyAffairsID>340B-OPA-CA-771204</OfficeOfPharmacyAffairsID>
+		<OfficeOfPharmacyAffairsID>340B-OPA-CA-771205</OfficeOfPharmacyAffairsID>
+		<OfficeOfPharmacyAffairsID>340B-OPA-CA-771206</OfficeOfPharmacyAffairsID>
+	
+		<DeliveryRequest>NO DELIVERY</DeliveryRequest>
+		<DeliveryLocation>HOME</DeliveryLocation>
+	
+		<DiabeticSupply>
+			<TestingFrequency>1</TestingFrequency>
+			<TestingFrequencyNotes>If blood glucose exceeds 250 mg/dL while on steroid-containing eye therapy, monitor glucose once daily during treatment.</TestingFrequencyNotes>
+			<SupplyIndicator>false</SupplyIndicator>
+			<InsulinDependent>false</InsulinDependent>
+			<HasAutomatedInsulinDevice>false</HasAutomatedInsulinDevice>
+			<InsulinPumpAdministered>false</InsulinPumpAdministered>
+		</DiabeticSupply>
+	
+		<InjuryRelated>WORK</InjuryRelated>
+	
+		<Service>
+			<AgencyOfService>
+				<BusinessName>Bayview Home Health Nursing Services</BusinessName>
+				<Address>
+					<AddressLine1>245 Harbor Medical Plaza</AddressLine1>
+					<AddressLine2>Suite 410</AddressLine2>
+					<City>Annapolis</City>
+					<StateProvince>MD</StateProvince>
+					<PostalCode>21401</PostalCode>
+					<CountryCode>US</CountryCode>
+				</Address>
+				<CommunicationNumbers>
+					<PrimaryTelephone>
+						<Number>4105556124</Number>
+						<NumberExtension>410</NumberExtension>
+						<SupportsSMS>false</SupportsSMS>
+						<TelephoneCountryCode>001</TelephoneCountryCode>
+					</PrimaryTelephone>
+					<ElectronicMail>referrals@bayviewhhnursing.org</ElectronicMail>
+					<ElectronicMail>care.coordination@bayviewhhnursing.org</ElectronicMail>
+					<ElectronicMail>afterhours@bayviewhhnursing.org</ElectronicMail>
+					<Fax>
+						<Number>4105557309</Number>
+						<NumberExtension>221</NumberExtension>
+						<SupportsSMS>false</SupportsSMS>
+						<TelephoneCountryCode>001</TelephoneCountryCode>
+					</Fax>
+					<Fax>
+						<Number>4105557310</Number>
+						<NumberExtension>222</NumberExtension>
+						<SupportsSMS>false</SupportsSMS>
+						<TelephoneCountryCode>001</TelephoneCountryCode>
+					</Fax>
+					<Fax>
+						<Number>4105557311</Number>
+						<NumberExtension>223</NumberExtension>
+						<SupportsSMS>false</SupportsSMS>
+						<TelephoneCountryCode>001</TelephoneCountryCode>
+					</Fax>
+					<OtherTelephone>
+						<Number>4435552281</Number>
+						<NumberExtension>901</NumberExtension>
+						<SupportsSMS>true</SupportsSMS>
+						<TelephoneCountryCode>001</TelephoneCountryCode>
+					</OtherTelephone>
+					<OtherTelephone>
+						<Number>4435552282</Number>
+						<NumberExtension>902</NumberExtension>
+						<SupportsSMS>true</SupportsSMS>
+						<TelephoneCountryCode>001</TelephoneCountryCode>
+					</OtherTelephone>
+					<OtherTelephone>
+						<Number>4435552283</Number>
+						<NumberExtension>903</NumberExtension>
+						<SupportsSMS>true</SupportsSMS>
+						<TelephoneCountryCode>001</TelephoneCountryCode>
+					</OtherTelephone>
+					<DirectAddress>BAYVIEWHH@DIRECT.BAYVIEWHHNURSING.ORG</DirectAddress>
+				</CommunicationNumbers>
+				<AgencyContactName>
+					<LastName>Dawson</LastName>
+					<FirstName>Meredith</FirstName>
+					<MiddleName>Claire</MiddleName>
+					<Suffix>RN</Suffix>
+					<Prefix>Ms</Prefix>
+				</AgencyContactName>
+			</AgencyOfService>
+	
+			<ServiceType>
+				<TypeOfServiceFreeText>Skilled nursing ophthalmic medication administration teaching and adherence follow-up</TypeOfServiceFreeText>
+				<EffectiveDate>
+					<Date>2026-06-05</Date>
+				</EffectiveDate>
+				<ExpirationDate>
+					<Date>2026-06-20</Date>
+				</ExpirationDate>
+				<TypeOfServiceGroupSetting>N</TypeOfServiceGroupSetting>
+			</ServiceType>
+		</Service>
+	
+		<IVAdministration>
+			<NumberOfLumens>0</NumberOfLumens>
+			<DiluentAmount>
+				<Value>0</Value>
+				<CodeListQualifier>38</CodeListQualifier>
+				<QuantityUnitOfMeasure>
+					<Code>mL</Code>
+				</QuantityUnitOfMeasure>
+			</DiluentAmount>
+			<SpecificAdministrationGauge>0</SpecificAdministrationGauge>
+			<SpecificAdministrationBrand>NotApplicableForOphthalmicProduct</SpecificAdministrationBrand>
+			<SpecificAdministrationLength>0</SpecificAdministrationLength>
+			<SpecificAdministrationPump>false</SpecificAdministrationPump>
+			<IVAccessType>
+				<Text>Not applicable</Text>
+				<Code>NA-IV-01</Code>
+			</IVAccessType>
+			<IVAccessDeviceType>
+				<IVAccessDeviceTypeDescription>No IV access device required for ophthalmic administration</IVAccessDeviceTypeDescription>
+				<IVAccessDeviceType>
+					<Text>None</Text>
+					<Code>NA-IVD-01</Code>
+				</IVAccessDeviceType>
+			</IVAccessDeviceType>
+			<IVAccessCatheterTip>
+				<IVAccessCatheterTipDescription>Not applicable</IVAccessCatheterTipDescription>
+				<IVAccessCatheterTipType>
+					<Text>None</Text>
+					<Code>NA-CT-01</Code>
+				</IVAccessCatheterTipType>
+			</IVAccessCatheterTip>
+			<IVInfusion>
+				<IVInfusionDescription>No infusion; topical ophthalmic route only</IVInfusionDescription>
+				<IVInfusionType>
+					<Text>Not applicable</Text>
+					<Code>NA-INF-01</Code>
+				</IVInfusionType>
+			</IVInfusion>
+		</IVAdministration>
+	
+		<TreatmentIndicator>NEW</TreatmentIndicator>
+		<ProphylacticOrEpisodic>EPISODIC</ProphylacticOrEpisodic>
+		<CurrentTreatmentCycle>1</CurrentTreatmentCycle>
+		<NumberOfCyclesPlanned>1</NumberOfCyclesPlanned>
+	
+		<Wound>
+			<Location>
+				<Text>Left upper eyelid margin</Text>
+				<Code>LOCEYE001</Code>
+			</Location>
+			<Laterality>
+				<Text>Left</Text>
+				<Code>7771000</Code>
+			</Laterality>
+			<Length>0.3 cm</Length>
+			<Width>0.1 cm</Width>
+			<Depth>Superficial</Depth>
+		</Wound>
+		<Wound>
+			<Location>
+				<Text>Left lower conjunctival surface</Text>
+				<Code>LOCEYE002</Code>
+			</Location>
+			<Laterality>
+				<Text>Left</Text>
+				<Code>7771000</Code>
+			</Laterality>
+			<Length>0.2 cm</Length>
+			<Width>0.1 cm</Width>
+			<Depth>Epithelial</Depth>
+		</Wound>
+		<Wound>
+			<Location>
+				<Text>Periocular skin adjacent to lateral canthus</Text>
+				<Code>LOCEYE003</Code>
+			</Location>
+			<Laterality>
+				<Text>Left</Text>
+				<Code>7771000</Code>
+			</Laterality>
+			<Length>0.4 cm</Length>
+			<Width>0.2 cm</Width>
+			<Depth>Dermal</Depth>
+		</Wound>
+	
+		<PrescriberCheckedREMS>A</PrescriberCheckedREMS>
+		<REMSReproductivePotential>N</REMSReproductivePotential>
+		<REMSAuthorizationNumber>REMS-AUTH-OPH-2026-11872</REMSAuthorizationNumber>
+	
+		<Titration>
+			<PharmacyToTitrateDose>false</PharmacyToTitrateDose>
+			<TitrationDose>
+				<Measurement>
+					<VitalSign>8478-0</VitalSign>
+					<LOINCVersion>2.77</LOINCVersion>
+					<Value>16</Value>
+					<UnitOfMeasure>mm[Hg]</UnitOfMeasure>
+					<UCUMVersion>2.2</UCUMVersion>
+					<MinimumMeasurementValue>10</MinimumMeasurementValue>
+					<MaximumMeasurementValue>21</MaximumMeasurementValue>
+					<MeasurementNotes>Intraocular pressure baseline prior to steroid-containing ophthalmic therapy.</MeasurementNotes>
+				</Measurement>
+				<Measurement>
+					<VitalSign>89247-1</VitalSign>
+					<LOINCVersion>2.77</LOINCVersion>
+					<Value>2</Value>
+					<UnitOfMeasure>{grade}</UnitOfMeasure>
+					<UCUMVersion>2.2</UCUMVersion>
+					<MinimumMeasurementValue>0</MinimumMeasurementValue>
+					<MaximumMeasurementValue>4</MaximumMeasurementValue>
+					<MeasurementNotes>Conjunctival injection severity grading at start of treatment.</MeasurementNotes>
+				</Measurement>
+				<Measurement>
+					<VitalSign>80332-9</VitalSign>
+					<LOINCVersion>2.77</LOINCVersion>
+					<Value>3</Value>
+					<UnitOfMeasure>{score}</UnitOfMeasure>
+					<UCUMVersion>2.2</UCUMVersion>
+					<MinimumMeasurementValue>0</MinimumMeasurementValue>
+					<MaximumMeasurementValue>10</MaximumMeasurementValue>
+					<MeasurementNotes>Patient-reported ocular discomfort score before first compounded dose.</MeasurementNotes>
+				</Measurement>
+				<MeasurementTimingAndDuration>
+					<MeasurementAdministrationTiming>
+						<MeasurementTimingValue>
+							<Value1>48</Value1>
+							<RangeModifier>AND</RangeModifier>
+							<Value2>72</Value2>
+							<ValueUnitOfMeasure>
+								<Text>Hour</Text>
+								<Qualifier>SNOMED</Qualifier>
+								<Code>258702006</Code>
+							</ValueUnitOfMeasure>
+						</MeasurementTimingValue>
+						<MeasurementTimingModifier>
+							<Text>Recheck</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>410942007</Code>
+						</MeasurementTimingModifier>
+						<MeasurementTimingEvent>
+							<Text>After initiation</Text>
+							<Qualifier>SNOMED</Qualifier>
+							<Code>255214001</Code>
+						</MeasurementTimingEvent>
+						<MeasurementTimingClarifyingFreeText>Repeat ocular assessment in 48-72 hours if symptoms persist or worsen.</MeasurementTimingClarifyingFreeText>
+					</MeasurementAdministrationTiming>
+				</MeasurementTimingAndDuration>
+			</TitrationDose>
+		</Titration>
+	
+		<FlavoringRequested>N</FlavoringRequested>
+		<NumberOfPackagesToBeDispensed>1</NumberOfPackagesToBeDispensed>
+	
+		<PatientCodifiedNote>
+			<Qualifier>AA</Qualifier>
+			<Value>1</Value>
+		</PatientCodifiedNote>
+		<PatientCodifiedNote>
+			<Qualifier>AB</Qualifier>
+			<Value>2</Value>
+		</PatientCodifiedNote>
+		<PatientCodifiedNote>
+			<Qualifier>AC</Qualifier>
+			<Value>3</Value>
+		</PatientCodifiedNote>
+	
+		<FacilitySpecificHoursOfAdministrationTiming>
+			<HoursOfAdministrationValue>06</HoursOfAdministrationValue>
+			<HoursOfAdministrationValue>12</HoursOfAdministrationValue>
+			<HoursOfAdministrationValue>18</HoursOfAdministrationValue>
+			<HoursOfAdministration>
+				<Text>Daytime schedule block A</Text>
+				<Qualifier>SNOMED</Qualifier>
+				<Code>HRSCHED-A1</Code>
+			</HoursOfAdministration>
+		</FacilitySpecificHoursOfAdministrationTiming>
+		<FacilitySpecificHoursOfAdministrationTiming>
+			<HoursOfAdministrationValue>00</HoursOfAdministrationValue>
+			<HoursOfAdministrationValue>06</HoursOfAdministrationValue>
+			<HoursOfAdministrationValue>12</HoursOfAdministrationValue>
+			<HoursOfAdministration>
+				<Text>Overnight-inclusive schedule block B</Text>
+				<Qualifier>SNOMED</Qualifier>
+				<Code>HRSCHED-B2</Code>
+			</HoursOfAdministration>
+		</FacilitySpecificHoursOfAdministrationTiming>
+		<FacilitySpecificHoursOfAdministrationTiming>
+			<HoursOfAdministrationValue>08</HoursOfAdministrationValue>
+			<HoursOfAdministrationValue>14</HoursOfAdministrationValue>
+			<HoursOfAdministrationValue>20</HoursOfAdministrationValue>
+			<HoursOfAdministration>
+				<Text>Alternative awake-hours schedule block C</Text>
+				<Qualifier>SNOMED</Qualifier>
+				<Code>HRSCHED-C3</Code>
+			</HoursOfAdministration>
+		</FacilitySpecificHoursOfAdministrationTiming>
+	
+		<OtherMedicationDates>
+			<OtherMedicationDate>
+				<Date>2026-06-04</Date>
+			</OtherMedicationDate>
+			<OtherMedicationDateQualifier>StartDate</OtherMedicationDateQualifier>
+		</OtherMedicationDates>
+		<OtherMedicationDates>
+			<OtherMedicationDate>
+				<Date>2026-06-11</Date>
+			</OtherMedicationDate>
+			<OtherMedicationDateQualifier>AnticipatedHealthCareFacilityDischargeDate</OtherMedicationDateQualifier>
+		</OtherMedicationDates>
+		<OtherMedicationDates>
+			<OtherMedicationDate>
+				<Date>2026-06-05</Date>
+			</OtherMedicationDate>
+			<OtherMedicationDateQualifier>DateValidated</OtherMedicationDateQualifier>
+		</OtherMedicationDates>
+	
+		<NeedNoLaterThan>
+			<NeededNoLaterThanDate>2026-06-04T18:30:00-04:00</NeededNoLaterThanDate>
+			<NeededNoLaterThanReason>Initiation of ophthalmic therapy required same day to control bacterial-inflammatory flare.</NeededNoLaterThanReason>
+			<NeededNoLaterThanReason>Patient reports increasing pain and photophobia since morning clinic evaluation.</NeededNoLaterThanReason>
+			<NeededNoLaterThanReason>Delay may increase risk of prolonged inflammation and reduced treatment response.</NeededNoLaterThanReason>
+		</NeedNoLaterThan>
+	
+		<PlaceOfServiceNonSelfAdministeredProduct>11</PlaceOfServiceNonSelfAdministeredProduct>
+		<ProviderExplicitAuthorizationToAdminister>true</ProviderExplicitAuthorizationToAdminister>
+	
+		<ProcedureCodes>
+			<Code>92012</Code>
+			<Qualifier>CPT</Qualifier>
+		</ProcedureCodes>
+		<ProcedureCodes>
+			<Code>92285</Code>
+			<Qualifier>CPT</Qualifier>
+		</ProcedureCodes>
+		<ProcedureCodes>
+			<Code>99199</Code>
+			<Qualifier>CPT</Qualifier>
+		</ProcedureCodes>
+	
+		<TypeOfDose>Initial</TypeOfDose>
+</MedicationPrescribed>
