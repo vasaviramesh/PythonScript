@@ -204,10 +204,11 @@ class XmlMergeApp:
         """
         incoming = copy.deepcopy(sample_root)
         sample_tag = local_name(sample_root.tag)
+        base_tag = local_name(base_root.tag)
 
         # If sample root tag matches base root tag, replace base root content
         # in-place (ElementTree root object cannot be swapped directly).
-        if local_name(base_root.tag) == sample_tag:
+        if base_tag == sample_tag:
             base_root.attrib.clear()
             base_root.attrib.update(incoming.attrib)
             base_root.text = incoming.text
@@ -227,7 +228,7 @@ class XmlMergeApp:
 
         parent, target = find_parent_and_target_by_path(base_root, sample_tag)
 
-        if target is not None and parent is not None:
+        if target is not None:
             path = self._path_from_root_to_node(base_root, target)
             incoming.tail = target.tail
             siblings = list(parent)
