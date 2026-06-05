@@ -50,8 +50,9 @@ class XmlMergeApp:
         help_text = (
             "1) Select a base XML file and one or more sample XML files.\n"
             "2) Optional: remove every <Extension> node and its children.\n"
-            "3) For each sample file, replace matching sections in the base XML.\n"
-            "   A section matches when the sample section tag has the same name.\n"
+            "3) For each sample file, the entire sample root node replaces the\n"
+            "   matching node in the base XML (matched by local tag name / XPath).\n"
+            "   If no match is found, the sample root is appended to the base root.\n"
             "4) Save the merged result to a new XML file."
         )
         ttk.Label(main, text=help_text, justify="left").pack(anchor="w", pady=(0, 12))
@@ -175,32 +176,6 @@ class XmlMergeApp:
                     return parent, child
         return None, None
 
-    def _find_parent_child_by_path(self, root, tag_path):
-        """
-        Find parent/child in base tree using an exact local-name path.
-        tag_path is a list like ["Message","Body","NewRx","MedicationPrescribed"].
-        Returns (parent, child) for the final node, or (None, None).
-        """
-        if not tag_path or local_name(root.tag) != tag_path[0]:
-            return None, None
-
-        current = root
-        for name in tag_path[1:-1]:
-            nxt = None
-            for ch in list(current):
-                if isinstance(ch.tag, str) and local_name(ch.tag) == name:
-                    nxt = ch
-                    break
-            if nxt is None:
-                return None, None
-            current = nxt
-
-        target_name = tag_path[-1]
-        for ch in list(current):
-            if isinstance(ch.tag, str) and local_name(ch.tag) == target_name:
-                return current, ch
-        return None, None
-
     def _path_from_root_to_node(self, root, target):
         """Return local-name path list from root to target node, else None."""
         target_id = id(target)
@@ -218,68 +193,49 @@ class XmlMergeApp:
 
         return path[:] if dfs(root) else None
 
-    def get_sample_sections(self, base_root, sample_root):
-        sample_tag_name = local_name(sample_root.tag)
-        base_tag_name = local_name(base_root.tag)
+    def merge_whole_node(self, base_root, sample_root, sample_name):
+        """
+        Whole-node replacement: find the node in base_root whose local tag name
+        matches sample_root's local tag name, and replace it entirely with a deep
+        copy of sample_root. If base_root itself matches, replace its content
+        in-place. If no match is found, append sample_root to base_root.
+        Returns (replaced_count, appended_count).
+        """
+        sample_tag = local_name(sample_root.tag)
+        base_tag = local_name(base_root.tag)
+        incoming = copy.deepcopy(sample_root)
 
-        if sample_tag_name != base_tag_name:
-            _, existing = self.find_element_parent_by_tag(base_root, sample_tag_name)
-            if existing is not None:
-                return [sample_root]
+        if sample_tag == base_tag:
+            # Replace base root content in-place (ElementTree root object cannot
+            # be swapped, so update its attributes and children directly).
+            base_root.attrib.clear()
+            base_root.attrib.update(incoming.attrib)
+            base_root.text = incoming.text
+            for child in list(base_root):
+                base_root.remove(child)
+            for child in list(incoming):
+                base_root.append(child)
+            self.log(f"  Replaced base root content: {sample_tag}")
+            return 1, 0
 
-            matching_children = [
-                child
-                for child in list(sample_root)
-                if isinstance(child.tag, str)
-                and self.find_element_parent_by_tag(base_root, local_name(child.tag))[1] is not None
-            ]
-            if matching_children:
-                return matching_children
+        parent, existing = self.find_element_parent_by_tag(base_root, sample_tag)
 
-            return [sample_root]
-
-        return [child for child in list(sample_root) if isinstance(child.tag, str)]
-
-    def merge_sections(self, base_root, sample_root, sample_name):
-        replaced = 0
-        appended = 0
-        skipped = 0
-
-        sample_sections = self.get_sample_sections(base_root, sample_root)
-        if not sample_sections:
-            self.log(f"- {sample_name}: no sections found; skipped.")
-            return replaced, appended, skipped
-
-        for sample_section in sample_sections:
-            tag_name = local_name(sample_section.tag)
-            # Prefer exact path match (reliable when tags repeat in many places)
-            section_path = self._path_from_root_to_node(sample_root, sample_section)
-            parent, existing = (None, None)
-            if section_path:
-                parent, existing = self._find_parent_child_by_path(base_root, section_path)
-
-            # Fallback to old behavior
-            if existing is None:
-                parent, existing = self.find_element_parent_by_tag(base_root, tag_name)
-
-            incoming = copy.deepcopy(sample_section)
-            if existing is not None:
-                incoming.tail = existing.tail
-                siblings = list(parent)
-                index = siblings.index(existing)
-                parent.remove(existing)
-                parent.insert(index, incoming)
-                replaced += 1
-                if section_path:
-                    self.log(f"  Replaced section: {'/'.join(section_path)}")
-                else:
-                    self.log(f"  Replaced section: {tag_name}")
+        if existing is not None:
+            path = self._path_from_root_to_node(base_root, existing)
+            incoming.tail = existing.tail
+            siblings = list(parent)
+            index = siblings.index(existing)
+            parent.remove(existing)
+            parent.insert(index, incoming)
+            if path:
+                self.log(f"  Replaced by path: {'/'.join(path)}")
             else:
-                base_root.append(incoming)
-                appended += 1
-                self.log(f"  Appended new section: {tag_name}")
+                self.log(f"  Replaced node: {sample_tag}")
+            return 1, 0
 
-        return replaced, appended, skipped
+        base_root.append(incoming)
+        self.log(f"  Appended (no match found for '{sample_tag}'): appended to base root")
+        return 0, 1
 
     def run_merge(self, save=False):
         if not self.validate_inputs():
@@ -319,15 +275,15 @@ class XmlMergeApp:
                 removed_count = self.remove_extension_nodes(sample_root)
                 self.log(f"  Removed Extension nodes from sample: {removed_count}")
 
-            replaced, appended, _ = self.merge_sections(base_root, sample_root, os.path.basename(sample_path))
+            replaced, appended = self.merge_whole_node(base_root, sample_root, os.path.basename(sample_path))
             total_replaced += replaced
             total_appended += appended
 
         indent_xml(base_root)
 
         self.log("\n=")
-        self.log(f"Total sections replaced: {total_replaced}")
-        self.log(f"Total sections appended: {total_appended}")
+        self.log(f"Total nodes replaced: {total_replaced}")
+        self.log(f"Total nodes appended: {total_appended}")
 
         if save:
             try:
