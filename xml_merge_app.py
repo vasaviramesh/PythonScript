@@ -5,6 +5,9 @@ from tkinter import filedialog, messagebox, ttk
 from xml.etree import ElementTree as ET
 
 
+FALLBACK_XML_ENCODINGS = ("utf-8-sig", "cp1252", "latin-1")
+
+
 def local_name(tag: str) -> str:
     if not isinstance(tag, str):
         return ""
@@ -24,6 +27,26 @@ def indent_xml(elem, level=0):
             elem[-1].tail = i
     if level and (not elem.tail or not elem.tail.strip()):
         elem.tail = i
+
+
+def parse_xml_file(path):
+    try:
+        return ET.parse(path), None
+    except Exception as original_error:
+        fallback_errors = []
+        with open(path, "rb") as file:
+            data = file.read()
+
+        for encoding in FALLBACK_XML_ENCODINGS:
+            try:
+                text = data.decode(encoding)
+                root = ET.fromstring(text)
+                return ET.ElementTree(root), encoding
+            except Exception as fallback_error:
+                fallback_errors.append(f"{encoding}: {fallback_error}")
+
+        details = "\n".join(fallback_errors)
+        raise ValueError(f"{original_error}\n\nFallback parsing also failed:\n{details}") from original_error
 
 
 class XmlMergeApp:
@@ -50,9 +73,7 @@ class XmlMergeApp:
         help_text = (
             "1) Select a base XML file and one or more sample XML files.\n"
             "2) Optional: remove every <Extension> node and its children.\n"
-            "3) For each sample file, the entire sample root node replaces the\n"
-            "   matching node in the base XML (matched by local tag name / XPath).\n"
-            "   If no match is found, the sample root is appended to the base root.\n"
+            "3) For each sample file, replace the base section whose tag matches the sample root tag.\n"
             "4) Save the merged result to a new XML file."
         )
         ttk.Label(main, text=help_text, justify="left").pack(anchor="w", pady=(0, 12))
@@ -176,63 +197,32 @@ class XmlMergeApp:
                     return parent, child
         return None, None
 
-    def _path_from_root_to_node(self, root, target):
-        """Return local-name path list from root to target node, else None."""
-        target_id = id(target)
-        path = []
+    def merge_sections(self, base_root, sample_root, sample_name):
+        replaced = 0
+        appended = 0
+        skipped = 0
 
-        def dfs(node):
-            path.append(local_name(node.tag))
-            if id(node) == target_id:
-                return True
-            for ch in list(node):
-                if isinstance(ch.tag, str) and dfs(ch):
-                    return True
-            path.pop()
-            return False
+        if not isinstance(sample_root.tag, str):
+            self.log(f"- {sample_name}: no root section found; skipped.")
+            return replaced, appended, skipped
 
-        return path[:] if dfs(root) else None
-
-    def merge_whole_node(self, base_root, sample_root, sample_name):
-        """
-        Whole-node replacement: find the node in base_root whose local tag name
-        matches sample_root's local tag name, and replace it entirely with a deep
-        copy of sample_root. If base_root itself matches, replace its content
-        in-place. If no match is found, append sample_root to base_root.
-        Returns (replaced_count, appended_count).
-        """
-        sample_tag = local_name(sample_root.tag)
-        base_tag = local_name(base_root.tag)
+        tag_name = local_name(sample_root.tag)
+        parent, existing = self.find_element_parent_by_tag(base_root, tag_name)
         incoming = copy.deepcopy(sample_root)
-
-        if sample_tag == base_tag:
-            # Replace base root content in-place (ElementTree root object cannot
-            # be swapped, so update its attributes and children directly).
-            base_root.attrib.clear()
-            base_root.attrib.update(incoming.attrib)
-            base_root.text = incoming.text
-            base_root[:] = list(incoming)
-            self.log(f"  Replaced base root content: {sample_tag}")
-            return 1, 0
-
-        parent, existing = self.find_element_parent_by_tag(base_root, sample_tag)
-
         if existing is not None:
-            path = self._path_from_root_to_node(base_root, existing)
             incoming.tail = existing.tail
             siblings = list(parent)
             index = siblings.index(existing)
             parent.remove(existing)
             parent.insert(index, incoming)
-            if path:
-                self.log(f"  Replaced by path: {'/'.join(path)}")
-            else:
-                self.log(f"  Replaced node: {sample_tag}")
-            return 1, 0
+            replaced += 1
+            self.log(f"  Replaced section: {tag_name}")
+        else:
+            base_root.append(incoming)
+            appended += 1
+            self.log(f"  Appended new section: {tag_name}")
 
-        base_root.append(incoming)
-        self.log(f"  Appended to base root (no match found for '{sample_tag}')")
-        return 0, 1
+        return replaced, appended, skipped
 
     def run_merge(self, save=False):
         if not self.validate_inputs():
@@ -240,13 +230,15 @@ class XmlMergeApp:
 
         self.clear_log()
         try:
-            base_tree = ET.parse(self.base_xml_path.get())
+            base_tree, base_encoding = parse_xml_file(self.base_xml_path.get())
             base_root = base_tree.getroot()
         except Exception as ex:
             messagebox.showerror("XML error", f"Could not read base XML file.\n\n{ex}")
             return
 
         self.log(f"Base XML: {self.base_xml_path.get()}")
+        if base_encoding:
+            self.log(f"Base XML parsed with fallback encoding: {base_encoding}")
         self.log(f"Samples: {len(self.sample_paths)} file(s)")
         self.log("=")
 
@@ -262,25 +254,28 @@ class XmlMergeApp:
         for sample_path in self.sample_paths:
             self.log(f"\nProcessing sample: {sample_path}")
             try:
-                sample_tree = ET.parse(sample_path)
+                sample_tree, sample_encoding = parse_xml_file(sample_path)
                 sample_root = sample_tree.getroot()
             except Exception as ex:
                 self.log(f"  ERROR: Could not read sample XML: {ex}")
                 continue
 
+            if sample_encoding:
+                self.log(f"  Parsed with fallback encoding: {sample_encoding}")
+
             if self.remove_extension.get():
                 removed_count = self.remove_extension_nodes(sample_root)
                 self.log(f"  Removed Extension nodes from sample: {removed_count}")
 
-            replaced, appended = self.merge_whole_node(base_root, sample_root, os.path.basename(sample_path))
+            replaced, appended, _ = self.merge_sections(base_root, sample_root, os.path.basename(sample_path))
             total_replaced += replaced
             total_appended += appended
 
         indent_xml(base_root)
 
         self.log("\n=")
-        self.log(f"Total nodes replaced: {total_replaced}")
-        self.log(f"Total nodes appended: {total_appended}")
+        self.log(f"Total sections replaced: {total_replaced}")
+        self.log(f"Total sections appended: {total_appended}")
 
         if save:
             try:
